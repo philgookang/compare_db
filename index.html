@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <!-- Page Encoding -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8"/>
+
+        <!-- IE Condition Where Breaking CSS -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- Mobile first -->
+		<meta name="viewport" content="width=1200"/>
+
+		<title>Database Compare</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,900" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="action.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" id="menu-header">
+				<div class="col-2">
+					<table class="access-table" id="firstAccessTable">
+						<tbody>
+							<tr>
+								<th>Host</th><td><input type="text" id="first_host" value=""/></td>
+							</tr>
+							<tr>
+								<th>User</th><td><input type="text" id="first_user" value=""/></td>
+							</tr>
+							<tr>
+								<th>Password</th><td><input type="password" id="first_password" value=""/></td>
+							</tr>
+							<tr>
+								<th>Database</th><td><input type="text" id="first_database" value=""/></td>
+							</tr>
+							<tr>
+								<th>Port</th><td><input type="text" id="first_port" value=""/></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="access_menu">
+						<div class="offline">
+							<button class="btn" onclick="Vers.connectFirst();">
+								<i class="fa fa-plug" aria-hidden="true"></i> Connect
+							</button>
+						</div>
+						<!--/.offline-->
+
+					</div>
+					<!--/.access_menu-->
+				</div>
+				<!--/.col-2-->
+				<div class="col-2">
+					<table class="access-table" id="secondAccessTable">
+						<tbody>
+							<tr>
+								<th>Host</th><td><input type="text" id="second_host" value=""/></td>
+							</tr>
+							<tr>
+								<th>User</th><td><input type="text" id="second_user"/></td>
+							</tr>
+							<tr>
+								<th>Password</th><td><input type="password" id="second_password"/></td>
+							</tr>
+							<tr>
+								<th>Database</th><td><input type="text" id="second_database"/></td>
+							</tr>
+							<tr>
+								<th>Port</th><td><input type="text" id="second_port"/></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="access_menu">
+						<div class="offline">
+
+							<button class="btn" onclick="Vers.connectSecond();">
+								<i class="fa fa-plug" aria-hidden="true"></i> Connect
+							</button>
+						</div>
+						<!--/.offline-->
+
+					</div>
+					<!--/.access_menu-->
+				</div>
+				<!--/.col-2-->
+			</div>
+			<!--/.row-->
+
+			<div class="row">
+				<div class="col-2 result-section" id="firstTableResult">
+					<div class="result-content"></div>
+					<!--/.result-content-->
+				</div>
+				<!--/.col-2-->
+				<div class="col-2 result-section" id="secondTableResult">
+					<div class="result-content"></div>
+					<!--/.result-content-->
+				</div>
+				<!--/.col-2-->
+			</div>
+			<!--/.row-->
+		</div>
+		<!--/.container-->
+    </body>
+	<script>
+		Vers.init();
+	</script>
+</html>
